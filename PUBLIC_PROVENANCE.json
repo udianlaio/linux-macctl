@@ -6,7 +6,7 @@
   "history_exported": false,
   "license": "Apache-2.0",
   "notes": "Public distribution adds clean-history packaging and one-command installation; private qualification evidence is intentionally excluded.",
-  "public_version": "0.6.1",
+  "public_version": "0.6.2",
   "runtime_secrets_exported": false,
   "schema": "linux-macctl-public-provenance/v1"
 }

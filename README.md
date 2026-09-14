@@ -46,7 +46,7 @@ sudo macctl-uninstall
 
 ## 版本
 
-公开发行版：**0.6.1**。核心控制面来源于已验收 `Linux-macctl v0.6.0`，公开版增加 clean-history distribution、隐私清洗和一键安装层。详见 `PUBLIC_PROVENANCE.json`。
+公开发行版：**0.6.2**。核心控制面来源于已验收 `Linux-macctl v0.6.0`，公开版增加 clean-history distribution、隐私清洗和一键安装层。详见 `PUBLIC_PROVENANCE.json`。
 
 ## 开源许可证
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-VERSION="${MACCTL_VERSION:-0.6.1}"
+VERSION="${MACCTL_VERSION:-0.6.2}"
 REPO="${MACCTL_PUBLIC_REPO:-udianlaio/linux-macctl}"
 TAG="linux-v${VERSION}"
 ASSET="linux-macctl-${VERSION}.tar.gz"
