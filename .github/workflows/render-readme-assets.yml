@@ -1,0 +1,36 @@
+name: render-readme-assets
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/render-readme-assets.py
+      - .github/workflows/render-readme-assets.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4, full SHA pin
+      - name: Install raster dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-cjk
+          python3 -m pip install pillow
+      - name: Render WebP assets
+        run: python3 scripts/render-readme-assets.py
+      - name: Commit generated assets
+        run: |
+          if [ -n "$(git status --porcelain -- assets/brand/raster)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add assets/brand/raster
+            git commit -m "生成 README WebP 品牌与演示资产"
+            git push origin HEAD:main
+          else
+            echo "Raster assets already up to date."
+          fi
