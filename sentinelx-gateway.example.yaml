@@ -1,0 +1,15 @@
+# Linux-macctl SentinelX gateway overlay/example
+# Merge selectively into your SentinelX policy. This file contains no credentials.
+
+allowed_commands:
+  - macctl
+  - /usr/local/bin/macctl
+  - /usr/local/bin/macctl-setup
+  - /usr/local/bin/macctl-upgrade
+  - /usr/local/bin/macctl-uninstall
+  - python3
+  - timeout
+  - sha256sum
+
+# Keep service lifecycle permissions out of the default public example.
+# Add only the exact services/actions your deployment actually requires.

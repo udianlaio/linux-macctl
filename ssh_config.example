@@ -1,0 +1,26 @@
+Host macmini
+    HostName example.invalid
+    Port 22
+    User macuser
+    IdentityFile /etc/macctl/id_ed25519
+    IdentitiesOnly yes
+    BatchMode yes
+    PreferredAuthentications publickey
+    PubkeyAuthentication yes
+    PasswordAuthentication no
+    KbdInteractiveAuthentication no
+    StrictHostKeyChecking yes
+    UserKnownHostsFile /etc/macctl/known_hosts
+    CheckHostIP yes
+    VerifyHostKeyDNS no
+    ControlMaster auto
+    ControlPath /run/macctl/%C
+    ControlPersist 600
+    ConnectTimeout 5
+    ConnectionAttempts 1
+    ServerAliveInterval 15
+    ServerAliveCountMax 2
+    ForwardAgent no
+    ForwardX11 no
+    RequestTTY no
+    LogLevel ERROR

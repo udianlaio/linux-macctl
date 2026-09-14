@@ -1,0 +1,11 @@
+{
+  "core_source_commit": "155b72a2905a6bbe3d101a6a37b41d5bf135cadd",
+  "core_source_release": "Linux-macctl v0.6.0",
+  "core_source_tag": "linux-v0.6.0",
+  "core_source_tree": "d6e1caa3b4dcc70c08d5d94b2dfe4b8048e5119b",
+  "history_exported": false,
+  "notes": "Public distribution adds clean-history packaging and one-command installation; private qualification evidence is intentionally excluded.",
+  "public_version": "0.6.1",
+  "runtime_secrets_exported": false,
+  "schema": "linux-macctl-public-provenance/v1"
+}

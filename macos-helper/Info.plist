@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+<key>CFBundleIdentifier</key><string>app.openai.macctl.helper</string>
+<key>CFBundleName</key><string>MacCtl Helper</string>
+<key>CFBundleDisplayName</key><string>MacCtl Helper</string>
+<key>CFBundleExecutable</key><string>MacCtlHelper</string>
+<key>CFBundlePackageType</key><string>APPL</string>
+<key>CFBundleVersion</key><string>6</string>
+<key>CFBundleShortVersionString</key><string>0.4.0</string>
+<key>LSUIElement</key><true/>
+<key>NSAppleEventsUsageDescription</key><string>MacCtl Helper 使用 Apple Events（苹果事件自动化）执行用户授权的远程自动化操作。</string>
+<key>NSScreenCaptureUsageDescription</key><string>MacCtl Helper 使用 Screen Recording（屏幕录制）进行用户授权的远程画面检查与验证。</string>
+</dict></plist>
