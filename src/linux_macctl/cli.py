@@ -17,8 +17,8 @@ import time
 import uuid
 from pathlib import Path
 
-from architecture_security_contract import architecture_security_contract
-from fleet_control_engine import (
+from .architecture_security_contract import architecture_security_contract
+from .fleet_control_engine import (
     fleet_control_capabilities,
     fleet_doctor,
     fleet_inventory,
@@ -26,12 +26,12 @@ from fleet_control_engine import (
     fleet_resolve,
     fleet_status,
 )
-from workstation_control_engine import (
+from .workstation_control_engine import (
     evaluate_workstation_live_evidence,
     evaluate_workstation_observation,
     workstation_profile_contract,
 )
-from remote_linux_control_engine import (
+from .remote_linux_control_engine import (
     evaluate_remote_linux_live_evidence,
     load_remote_linux_registry,
     remote_linux_profile_contract,
@@ -39,15 +39,15 @@ from remote_linux_control_engine import (
     resolve_remote_linux_target,
     select_remote_linux_targets,
 )
-from remote_linux_ssh_manager import (
+from .remote_linux_ssh_manager import (
     bounded_batch_parallelism,
     classify_transport_failure,
     evaluate_ssh_transport_config,
     parse_ssh_g_output,
 )
-from artifact_engine import ArtifactError, ArtifactStore
-from attachment_delivery_engine import delivery_probe, runtime_adapters_from_config
-from browser_cdp_engine import (
+from .artifact_engine import ArtifactError, ArtifactStore
+from .attachment_delivery_engine import delivery_probe, runtime_adapters_from_config
+from .browser_cdp_engine import (
     BrowserCdpError,
     CdpClient,
     dom_click_expression,
@@ -64,7 +64,7 @@ from browser_cdp_engine import (
     wait_http_json as cdp_wait_http_json,
     wait_ready as cdp_wait_ready,
 )
-from browser_automation_engine import (
+from .browser_automation_engine import (
     BrowserAutomationError,
     dom_extract_expression,
     dom_file_input_probe_expression,
@@ -76,9 +76,9 @@ from browser_automation_engine import (
     history_target,
     normalize_key_event,
 )
-from browser_semantic_engine import analyze_extracted_page
-from browser_control_router import plan_control_route
-from browser_session_engine import (
+from .browser_semantic_engine import analyze_extracted_page
+from .browser_control_router import plan_control_route
+from .browser_session_engine import (
     BrowserSessionError,
     BrowserSessionStore,
     build_session_record,
@@ -90,7 +90,7 @@ from browser_session_engine import (
     validate_qualification_config,
     validate_session_id,
 )
-from messaging_engine import (
+from .messaging_engine import (
     MessagingError,
     MessagingStore,
     build_binding,
@@ -106,7 +106,7 @@ from messaging_engine import (
     DEFAULT_RATE_LIMIT_COUNT as MESSAGING_DEFAULT_RATE_LIMIT_COUNT,
     DEFAULT_RATE_LIMIT_WINDOW_SECONDS as MESSAGING_DEFAULT_RATE_LIMIT_WINDOW_SECONDS,
 )
-from native_browser_engine import (
+from .native_browser_engine import (
     NativeBrowserActionError,
     NativeBrowserActionStore,
     assess_native_action_recovery,
@@ -120,34 +120,34 @@ from native_browser_engine import (
     record_native_action_event,
     validate_native_action_plan,
 )
-from attachment_gateway import AttachmentGateway
-from attachment_session_engine import AttachmentSessionStore, DeliverySessionError
-from host_adapter_qualification_engine import (
+from .attachment_gateway import AttachmentGateway
+from .attachment_session_engine import AttachmentSessionStore, DeliverySessionError
+from .host_adapter_qualification_engine import (
     HostAdapterQualificationError,
     evaluate_host_adapter_observation,
     qualification_contract_capabilities,
 )
-from host_native_file_return_conformance import (
+from .host_native_file_return_conformance import (
     HostNativeConformanceError,
     build_synthetic_conformance_fixture,
     conformance_contract_capabilities,
     evaluate_conformance_evidence,
 )
-from host_native_runtime_capability_watch import (
+from .host_native_runtime_capability_watch import (
     HostNativeRuntimeWatchError,
     current_project_baseline,
     evaluate_runtime_capability_watch,
     runtime_watch_capabilities,
 )
-from delivery_route_engine import PathProbe, select_path
-from execution_backend import (
+from .delivery_route_engine import PathProbe, select_path
+from .execution_backend import (
     remote_command_string,
     remote_rsync_argv,
     remote_scp_argv,
     remote_ssh_argv,
 )
-from lan_probe_engine import LanProbeError, probe_registered_ssh_lan
-from audit_engine import (
+from .lan_probe_engine import LanProbeError, probe_registered_ssh_lan
+from .audit_engine import (
     append_audit_record,
     build_audit_record,
     new_correlation_id,
@@ -157,16 +157,16 @@ from audit_engine import (
     summarize_precondition,
     verify_audit_chain,
 )
-from doctor_engine import evaluate_doctor
-from hardening_engine import evaluate_hardening, parse_probe_output
-from runtime_engine import bounded_run
-from selector_engine import choose_ranked_match, rank_ax_inventory
-from policy_engine import (
+from .doctor_engine import evaluate_doctor
+from .hardening_engine import evaluate_hardening, parse_probe_output
+from .runtime_engine import bounded_run
+from .selector_engine import choose_ranked_match, rank_ax_inventory
+from .policy_engine import (
     classify_operation,
     evaluate_break_glass,
     policy_status,
 )
-from transfer_engine import (
+from .transfer_engine import (
     TransferPlanError,
     effective_remote_file_path,
     local_stage_sibling,
@@ -174,7 +174,7 @@ from transfer_engine import (
     resolve_remote_user_path,
     sha256_file,
 )
-from transaction_engine import (
+from .transaction_engine import (
     COMPLETED,
     DISPATCHED,
     FAILED,
@@ -188,8 +188,11 @@ from transaction_engine import (
     validate_remote_path,
     validate_request_id,
 )
-from target_registry_engine import TargetSpecError, resolve_runtime_target
-from target_registry_store import TargetRegistryStoreError, load_registry
+from .target_registry_engine import TargetSpecError, resolve_runtime_target
+from .target_registry_store import TargetRegistryStoreError, load_registry
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+PACKAGE_ROOT = Path(__file__).resolve().parent
 
 BASE_CFG = json.loads(Path("/etc/macctl/config.json").read_text(encoding="utf-8"))
 REQUESTED_TARGET = str(os.environ.get("MACCTL_TARGET") or "").strip()
@@ -1045,7 +1048,7 @@ def cmd_artifact(args):
             emit({"status": "PASS", "delivery_session": record})
             return
         if args.action in {"relay-stage", "relay-status", "relay-cleanup"}:
-            relay_script = Path(__file__).resolve().parent / "scripts" / "attachment-relay.py"
+            relay_script = PROJECT_ROOT / "scripts" / "attachment-relay.py"
             script_action = {"relay-stage": "stage", "relay-status": "inspect", "relay-cleanup": "cleanup"}[args.action]
             relay_value = args.artifact_id if args.action == "relay-stage" else args.relay_id
             result = run(
@@ -1296,13 +1299,13 @@ def cmd_doctor(args):
     auto-login, requests TCC grants, resets TCC, reboots, or changes policy.
     """
     t0 = time.perf_counter()
-    root = Path(__file__).resolve().parent
+    root = PACKAGE_ROOT
     expected_user = str(CFG.get("user") or "")
     probes = {"expected_user": expected_user}
     details = {}
 
     required_local = [
-        root / "macctl.py",
+        root / "cli.py",
         root / "policy_engine.py",
         root / "transaction_engine.py",
         root / "doctor_engine.py",

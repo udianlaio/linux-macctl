@@ -11,7 +11,7 @@ from __future__ import annotations
 import hashlib
 from typing import Protocol, Iterable
 
-from attachment_gateway import AttachmentGateway
+from .attachment_gateway import AttachmentGateway
 
 ADAPTER_SCHEMA_VERSION = "macctl-native-file-adapter/v1"
 

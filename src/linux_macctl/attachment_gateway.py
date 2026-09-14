@@ -6,8 +6,8 @@ is no arbitrary filesystem path API, shell, SSH or GUI/TCC capability here.
 """
 from __future__ import annotations
 
-from artifact_engine import ArtifactStore
-from attachment_delivery_engine import choose_adapter
+from .artifact_engine import ArtifactStore
+from .attachment_delivery_engine import choose_adapter
 
 GATEWAY_SCHEMA_VERSION = "macctl-attachment-gateway/v1"
 ACTIVE_OR_UNSAFE_INLINE = {

@@ -3,9 +3,9 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from artifact_engine import ArtifactStore
-from attachment_delivery_engine import AdapterCapability, GRADE_A
-from attachment_session_engine import (
+from linux_macctl.artifact_engine import ArtifactStore
+from linux_macctl.attachment_delivery_engine import AdapterCapability, GRADE_A
+from linux_macctl.attachment_session_engine import (
     ADAPTER_SELECTED,
     FAILED,
     HOST_ACCEPTED,

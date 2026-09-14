@@ -13,7 +13,7 @@ import hashlib
 import json
 import re
 
-from attachment_delivery_engine import GRADE_A
+from .attachment_delivery_engine import GRADE_A
 
 CONFORMANCE_SCHEMA_VERSION = "macctl-host-native-file-return-conformance/v1"
 EVIDENCE_SCHEMA_VERSION = "macctl-host-native-file-return-evidence/v1"

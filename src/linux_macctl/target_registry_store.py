@@ -11,7 +11,7 @@ import os
 from pathlib import Path
 import tempfile
 
-from target_registry_engine import empty_registry, validate_registry
+from .target_registry_engine import empty_registry, validate_registry
 
 
 class TargetRegistryStoreError(ValueError):

@@ -4,7 +4,7 @@ import stat
 import tempfile
 import unittest
 
-from transaction_engine import (
+from linux_macctl.transaction_engine import (
     COMPLETED,
     DISPATCHED,
     FAILED,

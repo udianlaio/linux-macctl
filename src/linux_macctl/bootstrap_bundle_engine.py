@@ -15,7 +15,7 @@ from pathlib import Path, PurePosixPath
 import stat
 import tarfile
 
-from target_registry_engine import TargetSpec
+from .target_registry_engine import TargetSpec
 
 BUNDLE_SCHEMA = "macctl-new-target-bootstrap-bundle/v1"
 MANIFEST_NAME = "BOOTSTRAP_MANIFEST.json"

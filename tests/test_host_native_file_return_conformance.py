@@ -1,7 +1,7 @@
 import unittest
 
-from attachment_delivery_engine import GRADE_A
-from host_native_file_return_conformance import (
+from linux_macctl.attachment_delivery_engine import GRADE_A
+from linux_macctl.host_native_file_return_conformance import (
     EVIDENCE_SCHEMA_VERSION,
     HostNativeConformanceError,
     REFERENCE_KIND,

@@ -1,5 +1,5 @@
 import unittest
-from browser_automation_engine import (
+from linux_macctl.browser_automation_engine import (
     BrowserAutomationError, dom_extract_expression, dom_focus_expression,
     dom_select_expression, dom_search_probe_expression, dom_wait_probe_expression, dom_value_equals_expression, history_target,
     normalize_extract_request, normalize_key_event, normalize_wait_request,

@@ -2,7 +2,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from transfer_engine import (
+from linux_macctl.transfer_engine import (
     TransferPlanError,
     effective_remote_file_path,
     local_stage_sibling,

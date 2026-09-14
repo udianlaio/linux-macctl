@@ -1,7 +1,7 @@
 import unittest
 
-from attachment_delivery_engine import GRADE_A, GRADE_B, GRADE_C, GRADE_D
-from host_adapter_qualification_engine import (
+from linux_macctl.attachment_delivery_engine import GRADE_A, GRADE_B, GRADE_C, GRADE_D
+from linux_macctl.host_adapter_qualification_engine import (
     HostAdapterQualificationError,
     evaluate_host_adapter_observation,
     qualification_contract_capabilities,

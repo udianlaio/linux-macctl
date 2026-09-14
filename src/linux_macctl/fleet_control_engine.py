@@ -7,7 +7,7 @@ production Mac's qualification into another target.
 """
 from __future__ import annotations
 
-from target_registry_engine import (
+from .target_registry_engine import (
     TargetSpecError,
     resolve_runtime_target,
     validate_registry,

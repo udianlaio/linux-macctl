@@ -4,7 +4,7 @@ import os
 import tempfile
 import unittest
 
-from browser_session_engine import (
+from linux_macctl.browser_session_engine import (
     BrowserSessionError,
     BrowserSessionStore,
     build_session_record,

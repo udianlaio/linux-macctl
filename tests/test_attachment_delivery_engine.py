@@ -4,7 +4,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from attachment_delivery_engine import (
+from linux_macctl.attachment_delivery_engine import (
     AdapterCapability,
     CHATGPT_CONVERSATION_FILE_RELAY,
     GRADE_A,

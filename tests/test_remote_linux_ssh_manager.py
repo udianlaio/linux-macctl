@@ -1,6 +1,6 @@
 import unittest
 
-from remote_linux_ssh_manager import (
+from linux_macctl.remote_linux_ssh_manager import (
     SSH_MANAGER_SCHEMA,
     bounded_batch_parallelism,
     classify_transport_failure,

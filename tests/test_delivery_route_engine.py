@@ -1,5 +1,5 @@
 import unittest
-from delivery_route_engine import PathProbe, plan_failover, select_path
+from linux_macctl.delivery_route_engine import PathProbe, plan_failover, select_path
 
 
 class DeliveryRouteTests(unittest.TestCase):

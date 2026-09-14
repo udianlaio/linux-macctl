@@ -17,9 +17,9 @@ import re
 import secrets
 from pathlib import Path
 
-from artifact_engine import ArtifactError, ArtifactStore
-from attachment_delivery_engine import GRADE_A
-from attachment_gateway import AttachmentGateway
+from .artifact_engine import ArtifactError, ArtifactStore
+from .attachment_delivery_engine import GRADE_A
+from .attachment_gateway import AttachmentGateway
 
 SESSION_SCHEMA_VERSION = "macctl-attachment-session/v1"
 SESSION_ID_RE = re.compile(r"^dlv_[A-Za-z0-9_-]{24,96}$")

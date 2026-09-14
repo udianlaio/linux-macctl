@@ -59,7 +59,7 @@ with tarfile.open(sys.argv[1],'r:gz') as t:
 PY
 mkdir -p "$TMP/src"
 tar -xzf "$TMP/$ASSET" -C "$TMP/src" --strip-components=1 --no-same-owner
-[[ -f "$TMP/src/macctl.py" && -f "$TMP/src/PUBLIC_PROVENANCE.json" ]] || { echo "invalid release payload" >&2; exit 65; }
+[[ -f "$TMP/src/src/linux_macctl/cli.py" && -f "$TMP/src/PUBLIC_PROVENANCE.json" ]] || { echo "invalid release payload" >&2; exit 65; }
 if [[ -d "$PREFIX" ]]; then
   BACKUP="${PREFIX}.pre-${VERSION}-$(date +%Y%m%d%H%M%S)"
   cp -a "$PREFIX" "$BACKUP"
@@ -68,7 +68,7 @@ fi
 mkdir -p "$PREFIX" "$CONFIG_DIR" "$STATE_DIR" "$STATE_DIR/transactions" "$STATE_DIR/artifacts" "$STATE_DIR/attachment-deliveries" "$STATE_DIR/attachment-relays" "$LOG_DIR" "$RUN_DIR"
 rm -rf "$PREFIX"/*
 cp -a "$TMP/src/." "$PREFIX/"
-chmod 0755 "$PREFIX/macctl.py" "$PREFIX/install.sh" "$PREFIX/setup-target.sh" "$PREFIX/upgrade.sh" "$PREFIX/uninstall.sh"
+chmod 0755 "$PREFIX/install.sh" "$PREFIX/setup-target.sh" "$PREFIX/upgrade.sh" "$PREFIX/uninstall.sh"
 chmod 0755 "$PREFIX/macos-helper/build.sh" "$PREFIX/macos-helper/setup-signing.sh"
 if [[ ! -f "$CONFIG_DIR/config.json" ]]; then cp "$PREFIX/config.example.json" "$CONFIG_DIR/config.json"; fi
 if [[ ! -f "$CONFIG_DIR/id_ed25519" ]]; then ssh-keygen -q -t ed25519 -a 64 -N '' -C 'linux-macctl' -f "$CONFIG_DIR/id_ed25519"; fi
@@ -79,7 +79,8 @@ chmod 0600 "$CONFIG_DIR/config.json" "$CONFIG_DIR/id_ed25519" "$CONFIG_DIR/known
 chmod 0644 "$CONFIG_DIR/id_ed25519.pub"
 cat > "$BIN_DIR/macctl" <<EOF
 #!/usr/bin/env bash
-exec "$PREFIX/macctl.py" "\$@"
+export PYTHONPATH="$PREFIX/src${PYTHONPATH:+:$PYTHONPATH}"
+exec python3 -m linux_macctl.cli "\$@"
 EOF
 cat > "$BIN_DIR/macctl-setup" <<EOF
 #!/usr/bin/env bash

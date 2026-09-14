@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import re
 
-from attachment_delivery_engine import GRADE_A, GRADE_B, GRADE_C, GRADE_D
+from .attachment_delivery_engine import GRADE_A, GRADE_B, GRADE_C, GRADE_D
 
 QUALIFICATION_SCHEMA_VERSION = "macctl-host-adapter-qualification/v1"
 SHA256_RE = re.compile(r"^[0-9a-f]{64}$")

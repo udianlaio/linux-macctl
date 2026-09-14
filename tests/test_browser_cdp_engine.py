@@ -7,7 +7,7 @@ import struct
 import threading
 import unittest
 
-from browser_cdp_engine import (
+from linux_macctl.browser_cdp_engine import (
     BrowserCdpError,
     CdpClient,
     dom_click_expression,

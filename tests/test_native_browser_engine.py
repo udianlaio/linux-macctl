@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from native_browser_engine import (
+from linux_macctl.native_browser_engine import (
     NATIVE_ACTION_SCHEMA,
     NativeBrowserActionError,
     NativeBrowserActionStore,

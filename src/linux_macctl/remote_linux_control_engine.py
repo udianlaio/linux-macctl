@@ -6,7 +6,7 @@ import json
 import re
 from pathlib import Path
 
-from remote_linux_ssh_manager import SSH_MANAGER_SCHEMA, normalize_transport_policy
+from .remote_linux_ssh_manager import SSH_MANAGER_SCHEMA, normalize_transport_policy
 
 REMOTE_LINUX_SCHEMA = "macctl-remote-linux/v1"
 REMOTE_LINUX_REGISTRY_SCHEMA = "macctl-remote-linux-target-registry/v1"

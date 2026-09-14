@@ -3,9 +3,9 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from artifact_engine import ArtifactStore
-from attachment_gateway import AttachmentGateway
-from native_file_adapter import deliver_native_tool_file
+from linux_macctl.artifact_engine import ArtifactStore
+from linux_macctl.attachment_gateway import AttachmentGateway
+from linux_macctl.native_file_adapter import deliver_native_tool_file
 
 
 class FakeRuntime:

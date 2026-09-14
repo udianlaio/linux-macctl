@@ -1,12 +1,12 @@
 import json
 import unittest
 
-from architecture_security_contract import (
+from linux_macctl.architecture_security_contract import (
     PHASE,
     SCHEMA_VERSION,
     architecture_security_contract,
 )
-from host_native_runtime_capability_watch import (
+from linux_macctl.host_native_runtime_capability_watch import (
     current_project_baseline,
     runtime_watch_capabilities,
 )

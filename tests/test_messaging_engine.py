@@ -3,7 +3,7 @@ import os
 import tempfile
 import unittest
 
-from messaging_engine import (
+from linux_macctl.messaging_engine import (
     MessagingError,
     MessagingStore,
     binding_id,

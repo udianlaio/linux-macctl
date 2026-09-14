@@ -4,7 +4,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from audit_engine import (
+from linux_macctl.audit_engine import (
     AUDIT_SCHEMA_VERSION,
     append_audit_record,
     approval_evidence,

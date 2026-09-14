@@ -1,6 +1,6 @@
 import unittest
 
-from policy_engine import (
+from linux_macctl.policy_engine import (
     BREAK_GLASS,
     FORBIDDEN_BY_POLICY,
     HIGH_IMPACT,

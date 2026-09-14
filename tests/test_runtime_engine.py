@@ -5,7 +5,7 @@ import tempfile
 import time
 import unittest
 
-from runtime_engine import bounded_run
+from linux_macctl.runtime_engine import bounded_run
 
 
 class BoundedRunTests(unittest.TestCase):

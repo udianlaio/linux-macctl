@@ -1,6 +1,6 @@
 import unittest
 
-from hardening_engine import HostHardeningSnapshot, evaluate_hardening, parse_probe_output
+from linux_macctl.hardening_engine import HostHardeningSnapshot, evaluate_hardening, parse_probe_output
 
 
 SAMPLE = """@@MACOS@@

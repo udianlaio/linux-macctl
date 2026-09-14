@@ -1,5 +1,5 @@
 import unittest
-from browser_control_router import plan_control_route
+from linux_macctl.browser_control_router import plan_control_route
 
 class BrowserControlRouterTests(unittest.TestCase):
     def test_chrome_isolated_prefers_cdp(self):

@@ -1,7 +1,7 @@
 import copy
 import unittest
 
-from host_native_runtime_capability_watch import (
+from linux_macctl.host_native_runtime_capability_watch import (
     OBSERVATION_SCHEMA_VERSION,
     HostNativeRuntimeWatchError,
     current_project_baseline,

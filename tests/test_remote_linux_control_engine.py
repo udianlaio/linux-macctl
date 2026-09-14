@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from remote_linux_control_engine import (
+from linux_macctl.remote_linux_control_engine import (
     REMOTE_LINUX_EVIDENCE_SCHEMA,
     REMOTE_LINUX_REGISTRY_SCHEMA,
     REQUIRED_LIVE_CHECKS,

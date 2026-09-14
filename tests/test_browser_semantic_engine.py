@@ -1,5 +1,5 @@
 import unittest
-from browser_semantic_engine import analyze_extracted_page
+from linux_macctl.browser_semantic_engine import analyze_extracted_page
 
 class BrowserSemanticTests(unittest.TestCase):
     def test_login_classification_and_no_secret_return(self):

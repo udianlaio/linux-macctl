@@ -6,7 +6,7 @@ import tempfile
 import unittest
 import zipfile
 
-from artifact_engine import ArtifactError, ArtifactStore, ARTIFACT_SCHEMA_VERSION
+from linux_macctl.artifact_engine import ArtifactError, ArtifactStore, ARTIFACT_SCHEMA_VERSION
 
 
 class Clock:

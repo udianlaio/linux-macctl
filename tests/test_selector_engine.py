@@ -1,6 +1,6 @@
 import unittest
 
-from selector_engine import (
+from linux_macctl.selector_engine import (
     SELECTOR_SCHEMA_VERSION,
     choose_ranked_match,
     normalize_text,

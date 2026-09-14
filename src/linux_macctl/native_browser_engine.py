@@ -23,7 +23,7 @@ import urllib.parse
 from contextlib import contextmanager
 from pathlib import Path
 
-from browser_session_engine import (
+from .browser_session_engine import (
     BrowserSessionError,
     normalize_allow_host,
     normalize_authorized_action_id,

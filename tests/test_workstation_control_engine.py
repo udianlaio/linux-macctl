@@ -1,6 +1,6 @@
 import unittest
 
-from workstation_control_engine import (
+from linux_macctl.workstation_control_engine import (
     LIVE_EVIDENCE_SCHEMA,
     REQUIRED_APPS,
     REQUIRED_TOOLS,
